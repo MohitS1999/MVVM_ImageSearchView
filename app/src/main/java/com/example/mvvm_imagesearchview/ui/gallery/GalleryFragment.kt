@@ -24,7 +24,10 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
         val adapter = UnsplashPhotoAdapter()
         binding.apply {
             recyclerView.setHasFixedSize(true)
-            recyclerView.adapter = adapter
+            recyclerView.adapter = adapter.withLoadStateHeaderAndFooter(
+                header = UnsplashPhotoLoadStateAdapter{ adapter.retry() },
+                footer = UnsplashPhotoLoadStateAdapter{ adapter.retry() },
+            )
         }
 
 
