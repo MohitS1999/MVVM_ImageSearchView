@@ -23,6 +23,10 @@ class GalleryViewModel @Inject constructor(
 
     }
 
+    fun searchPhotos(query:String){
+        currentQuery.value = query
+    }
+
     companion object {
         private const val DEFAULT_QUERY = "cats"
     }
