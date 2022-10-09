@@ -4,6 +4,7 @@ import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.DragEvent
 import android.view.View
 import androidx.core.view.isVisible
@@ -16,6 +17,8 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.mvvm_imagesearchview.R
 import com.example.mvvm_imagesearchview.databinding.FragmentDetailsBinding
+
+private const val TAG = "DetailsFragment"
 
 class DetailsFragment:Fragment(R.layout.fragment_details) {
 
@@ -50,6 +53,7 @@ class DetailsFragment:Fragment(R.layout.fragment_details) {
                         dataSource: DataSource?,
                         isFirstResource: Boolean
                     ): Boolean {
+                        Log.d(TAG, "onResourceReady: when the resource is ready to get ")
                         progressBar.isVisible = false
                         textViewCreator.isVisible = true
                         textViewDescription.isVisible = photo.description != null
