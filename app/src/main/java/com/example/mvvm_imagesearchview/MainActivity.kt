@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController,appBarConfiguration)
 
     }
-
+    // FOR navigate up button
     override fun onSupportNavigateUp(): Boolean {
         Log.d(TAG, "onSupportNavigateUp: For back button on top left corner")
         return navController.navigateUp() || super.onSupportNavigateUp()
